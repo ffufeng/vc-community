@@ -7,7 +7,7 @@ storefrontApp.factory('httpErrorInterceptor', ['$q', '$rootScope', function ($q,
         $rootScope.$broadcast('storefrontError', {
             type: 'error',
             title: rejection.data.message,
-            message: rejection.data.stackTrace
+            message: rejection.status == 404 ? 'URL not found: ' + rejection.config.url : rejection.data.stackTrace
         });
         return $q.reject(rejection);
     };
