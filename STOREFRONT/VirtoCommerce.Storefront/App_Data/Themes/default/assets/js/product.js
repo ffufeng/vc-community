@@ -44,6 +44,11 @@ storefrontApp.controller('productController', ['$rootScope', '$scope', '$window'
         var productId = $window.products[0].id;
         catalogService.getProduct(productId).then(function (response) {
             var product = response.data;
+            if (!product.PrimaryImage) {
+                product.PrimaryImage = {
+                    Url: $scope.baseUrl + 'themes/assets/no-image.png'
+                };
+            }
             //Current product its also variation (titular)
             allVarations = [ product ].concat(product.Variations);
             $scope.allVariationPropsMap = getFlatternDistinctPropertiesMap(allVarations);

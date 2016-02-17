@@ -176,6 +176,7 @@ storefrontApp.controller('quoteRequestController', ['$rootScope', '$scope', '$lo
                 };
             }
             _.each(quoteRequest.Items, function (quoteItem) {
+                quoteItem.ImageUrl = quoteItem.ImageUrl || $scope.baseUrl + 'themes/assets/no-image.png';
                 var i = 1;
                 _.each(quoteItem.ProposalPrices, function (tierPrice) {
                     tierPrice.Id = i;

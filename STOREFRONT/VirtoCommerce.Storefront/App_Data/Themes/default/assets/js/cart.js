@@ -67,6 +67,9 @@ storefrontApp.controller('cartController', ['$rootScope', '$scope', '$timeout', 
         $scope.cartIsUpdating = true;
         cartService.getCart().then(function (response) {
             $scope.cart = response.data;
+            _.each($scope.cart.Items, function (item) {
+                item.ImageUrl = item.ImageUrl || $scope.baseUrl + 'themes/assets/no-image.png';
+            });
             $scope.cartIsUpdating = false;
         }, function (response) {
             $scope.cartIsUpdating = false;

@@ -283,6 +283,7 @@
     <Content Include="App_Data\Themes\default\assets\modernizr.min.js" />
     <Content Include="App_Data\Themes\default\assets\navbuttons.gif" />
     <Content Include="App_Data\Themes\default\assets\navbuttons2.gif" />
+    <Content Include="App_Data\Themes\default\assets\no-image.png" />
     <Content Include="App_Data\Themes\default\assets\offsite-small.svg" />
     <Content Include="App_Data\Themes\default\assets\offsite.svg" />
     <Content Include="App_Data\Themes\default\assets\option_selection.js" />
@@ -359,6 +360,7 @@
     <Compile Include="Services\CartValidator.cs" />
     <Compile Include="Services\CustomerServiceImpl.cs" />
     <Compile Include="Services\LinkHelper.cs" />
+    <Compile Include="Services\LinkListServiceImpl.cs" />
     <Compile Include="Services\PricingServiceImpl.cs" />
     <Compile Include="Services\PromotionEvaluator.cs" />
     <Compile Include="Common\StorefrontConstants.cs" />
@@ -426,6 +428,8 @@
     <Content Include="App_Data\Themes\default\snippets\recently-added-actual-quote-request-item-dialog.liquid">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="App_Data\Themes\default\templates\maintenance.liquid" />
+    <Content Include="App_Data\Themes\default\layout\empty.liquid" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -29,7 +29,11 @@
                         <span class="badge-label">{{ 'products.product.sold_out' | t }}</span>
                     </div>
                 {% endif %}
-                <img src="{{ product.featured_image.src | img_url: image_size }}" alt="{{ product.featured_image.alt | escape }}" />
+                {% if product.featured_image.src %}
+                    <img src="{{ product.featured_image.src | img_url: image_size }}" alt="{{ product.featured_image.alt | escape }}" />
+                {% else %}
+                    <img src="{{ 'themes/assets/no-image.png' | absolute_url }}" />
+                {% endif %}
             </div>
         </div>
         <p>{{ product.title }}</p>

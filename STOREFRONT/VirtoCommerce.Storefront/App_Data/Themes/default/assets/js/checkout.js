@@ -274,6 +274,9 @@ storefrontApp.controller('checkoutController', ['$rootScope', '$scope', '$window
             }
             $scope.checkout.Email = shipment.DeliveryAddress.Email || $scope.customer.Email;
             $scope.checkout.Items = cart.Items;
+            _.each($scope.checkout.Items, function (item) {
+                item.ImageUrl = item.ImageUrl || $scope.baseUrl + 'themes/assets/no-image.png';
+            });
             $scope.checkout.HasPhysicalProducts = cart.HasPhysicalProducts;
             $scope.checkout.Shipment = shipment;
             $scope.checkout.Payment = payment;
